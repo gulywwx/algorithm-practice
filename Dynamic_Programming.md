@@ -5,7 +5,7 @@
 ### Code Template
 
 ```python3
-# 自顶向下递归的动态规划 top down (need mem in this way)
+# 自顶向下递归的动态规划 top down (need memo in this way)
 def dp(状态1, 状态2, ...):
     for 选择 in 所有可能的选择:
         # 此时的状态已经因为做了选择而改变
