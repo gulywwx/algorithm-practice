@@ -5,9 +5,11 @@
 * [70. Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
 
 
-### Three ways for improvement
+### Notes
 
 暴力穷举 -> 带备忘录的递归解法 -> dp 数组的迭代解法
+
+一般求最值， 而回溯一般就是暴力穷举，找到所有可行， 没有重复因子
 
 ### Code Template
 
