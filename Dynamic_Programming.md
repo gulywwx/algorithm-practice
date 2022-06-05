@@ -2,6 +2,13 @@
 
 * [322. Coin Change](https://leetcode.com/problems/coin-change/)
 
+* [70. Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
+
+
+### Three ways for improvement
+
+暴力穷举 -> 带备忘录的递归解法 -> dp 数组的迭代解法
+
 ### Code Template
 
 ```python3
