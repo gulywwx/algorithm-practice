@@ -2,7 +2,7 @@
 
 * [46. Permutations](https://leetcode.com/problems/permutations/)
 
-* [N-Queens](https://leetcode.com/problems/n-queens/)
+* [51. N-Queens](https://leetcode.com/problems/n-queens/)
 
 
 ### Framework
