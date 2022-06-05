@@ -5,7 +5,7 @@
 * [70. Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
 
 
-### Notes
+### Framework
 
 暴力穷举 -> 带备忘录的递归解法 -> dp 数组的迭代解法
 
