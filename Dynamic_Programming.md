@@ -14,6 +14,8 @@
 
 * [139. Word Break](https://leetcode.com/problems/word-break/)
 
+* [300. Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/)
+
 
 
 
