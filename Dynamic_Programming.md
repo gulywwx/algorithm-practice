@@ -10,6 +10,12 @@
 
 * [91. Decode Ways](https://leetcode.com/problems/decode-ways/)
 
+* [152. Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/)
+
+* [139. Word Break](https://leetcode.com/problems/word-break/)
+
+
+
 
 ### Framework
 
