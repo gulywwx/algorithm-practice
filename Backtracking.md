@@ -26,7 +26,7 @@ def backtrack(路径, 选择列表):
         backtrack(路径, 选择列表)
         撤销选择
         
-##backtracking framework
+##multi branch tree
 def traverse(root):
   if not root:
     return
