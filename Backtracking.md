@@ -64,111 +64,100 @@ void backtrack(TreeNode root) {
 
 ### 形式一 元素无重不可复选，即 nums 中的元素都是唯一的，每个元素最多只能被使用一次
 
-```java
-/* 组合/子集问题回溯算法框架 */
-void backtrack(int[] nums, int start) {
-    // 回溯算法标准框架
-    for (int i = start; i < nums.length; i++) {
+```python3
+
+# 组合/子集问题回溯算法框架
+def backtrack(nums: List[int], start: int):
+    # 回溯算法标准框架
+    for i in range(start,len(nums)):
         // 做选择
-        track.addLast(nums[i]);
+        track.append(nums[i])
         // 注意参数
-        backtrack(nums, i + 1);
+        backtrack(nums, i + 1)
         // 撤销选择
-        track.removeLast();
-    }
-}
+        track.pop()
+        
 
-/* 排列问题回溯算法框架 */
-void backtrack(int[] nums) {
-    for (int i = 0; i < nums.length; i++) {
-        // 剪枝逻辑
-        if (used[i]) {
-            continue;
-        }
-        // 做选择
-        used[i] = true;
-        track.addLast(nums[i]);
+# 排列问题回溯算法框架
+def backtrack(nums: List[int]):
+    for i in range(len(nums)):
+        # 剪枝逻辑
+        if used[i]:
+            continue
+        # 做选择
+        used[i] = True;
+        track.append(nums[i])
 
-        backtrack(nums);
-        // 撤销选择
-        track.removeLast();
-        used[i] = false;
-    }
-}
+        backtrack(nums)
+        # 撤销选择
+        track.pop()
+        used[i] = False
+        
 ```
 
 ### 形式二 元素可重不可复选，即 nums 中的元素可以存在重复，每个元素最多只能被使用一次，其关键在于排序和剪枝
 
-```java
-Arrays.sort(nums);
-/* 组合/子集问题回溯算法框架 */
-void backtrack(int[] nums, int start) {
-    // 回溯算法标准框架
-    for (int i = start; i < nums.length; i++) {
-        // 剪枝逻辑，跳过值相同的相邻树枝
-        if (i > start && nums[i] == nums[i - 1]) {
-            continue;
-        }
-        // 做选择
-        track.addLast(nums[i]);
-        // 注意参数
-        backtrack(nums, i + 1);
-        // 撤销选择
-        track.removeLast();
-    }
-}
+```python3
+
+# 组合/子集问题回溯算法框架
+nums.sort()
+def backtrack(nums: List[int], start: int):
+    # 回溯算法标准框架
+    for i in range(start,len(nums)):
+        # 剪枝逻辑，跳过值相同的相邻树枝
+        if i > start and nums[i] == nums[i - 1]:
+            continue
+        # 做选择
+        track.append(nums[i])
+        # 注意参数
+        backtrack(nums, i + 1)
+        # 撤销选择
+        track.pop()           
 
 
-Arrays.sort(nums);
-/* 排列问题回溯算法框架 */
-void backtrack(int[] nums) {
-    for (int i = 0; i < nums.length; i++) {
-        // 剪枝逻辑
-        if (used[i]) {
-            continue;
-        }
-        // 剪枝逻辑，固定相同的元素在排列中的相对位置
-        if (i > 0 && nums[i] == nums[i - 1] && !used[i - 1]) {
-            continue;
-        }
-        // 做选择
-        used[i] = true;
-        track.addLast(nums[i]);
+# 排列问题回溯算法框架
+nums.sort()
+def backtrack(nums: List[int]):
+    for i in range(len(nums)):
+        # 剪枝逻辑
+        if used[i]:
+            continue
+        # 剪枝逻辑，固定相同的元素在排列中的相对位置
+        if i > 0 and nums[i] == nums[i - 1] and !used[i - 1]:
+            continue
+        # 做选择
+        used[i] = True
+        track.append(nums[i])
 
-        backtrack(nums);
-        // 撤销选择
-        track.removeLast();
-        used[i] = false;
-    }
-}
+        backtrack(nums)
+        # 撤销选择
+        track.pop()
+        used[i] = False
+        
 ```
 
 ### 形式三 元素无重可复选，即 nums 中的元素都是唯一的，每个元素可以被使用若干次，只要删掉去重逻辑即可
 
-```java
-/* 组合/子集问题回溯算法框架 */
-void backtrack(int[] nums, int start) {
-    // 回溯算法标准框架
-    for (int i = start; i < nums.length; i++) {
-        // 做选择
-        track.addLast(nums[i]);
-        // 注意参数
-        backtrack(nums, i);
-        // 撤销选择
-        track.removeLast();
-    }
-}
+```python3
+# 组合/子集问题回溯算法框架
+def backtrack(nums: List[int], start: int):
+    # 回溯算法标准框架
+    for i in range(start,len(nums)):
+        # 做选择
+        track.append(nums[i])
+        # 注意参数
+        backtrack(nums, i)
+        # 撤销选择
+        track.pop()
 
 
-/* 排列问题回溯算法框架 */
-void backtrack(int[] nums) {
-    for (int i = 0; i < nums.length; i++) {
-        // 做选择
-        track.addLast(nums[i]);
-        backtrack(nums);
-        // 撤销选择
-        track.removeLast();
-    }
-}
+# 排列问题回溯算法框架
+def backtrack(nums: List[int]):
+    for i in range(len(nums)):
+        # 做选择
+        track.append(nums[i])
+        backtrack(nums)
+        # 撤销选择
+        track.pop()
 ```
 
