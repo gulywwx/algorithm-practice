@@ -123,7 +123,7 @@ def backtrack(nums: List[int]):
         if used[i]:
             continue
         # 剪枝逻辑，固定相同的元素在排列中的相对位置
-        if i > 0 and nums[i] == nums[i - 1] and !used[i - 1]:
+        if i > 0 and nums[i] == nums[i - 1] and not used[i - 1]:
             continue
         # 做选择
         used[i] = True
